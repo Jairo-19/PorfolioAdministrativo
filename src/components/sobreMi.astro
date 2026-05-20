@@ -7,6 +7,8 @@ const idiomas = [
 const infoPersonal = [
   { etiqueta: "Fecha de nacimiento", valor: "19/10/2006"        },
   { etiqueta: "Ubicación",          valor: "Antequera, Málaga" },
+  { etiqueta: "Correo",             valor: "ramosj06jairo@gmail.com" },
+  { etiqueta: "Teléfono",           valor: "722408527"         },
   { etiqueta: "Carné de conducir",  valor: "En proceso"        },
   { etiqueta: "Disponibilidad",     valor: "Inmediata"         },
 ];
@@ -15,6 +17,11 @@ const estudios = [
   { titulo: "Desarrollo de Aplicaciones Web (DAW)", centro: "ITEC",  anio: "2024 – 2026" },
   { titulo: "Grado Medio Auxiliar Administrativo", centro: "IES · CFGM",  anio: "2022 – 2024" },
   { titulo: "Educación Secundaria Obligatoria (ESO)", centro: "Nuestra Señora del Carmen",  anio: "2018 – 2022" },
+];
+
+const cursos = [
+  { titulo: "Ciberseguridad en el teletrabajo", plataforma: "Google" },
+  { titulo: "Desarrollo con IA", plataforma: "BigSchool" },
 ];
 
 const lenguajes = [
@@ -87,11 +94,20 @@ const experiencia = [
           </div>
           <div>
             <h4 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-3 border-b-2 border-[#cc0247] pb-2">Formación académica</h4>
-            <ul class="flex flex-col gap-3">
+            <ul class="flex flex-col gap-3 mb-6">
               {estudios.map(({ titulo, centro, anio }) => (
                 <li>
                   <p class="text-gray-700 font-medium text-sm">{titulo}</p>
                   <p class="text-gray-400 text-xs">{centro} &middot; {anio}</p>
+                </li>
+              ))}
+            </ul>
+            <h4 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-3 border-b-2 border-[#cc0247] pb-2">Cursos complementarios</h4>
+            <ul class="flex flex-col gap-2">
+              {cursos.map(({ titulo, plataforma }) => (
+                <li>
+                  <p class="text-gray-700 font-medium text-sm">{titulo}</p>
+                  <p class="text-gray-400 text-xs">{plataforma}</p>
                 </li>
               ))}
             </ul>
