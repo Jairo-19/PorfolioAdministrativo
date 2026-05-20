@@ -20,11 +20,25 @@
   transition-delay: 0.2s;
 }
 
-.sm-card-der {
+.sm-card-frameworks {
   opacity: 0;
   transform: translateX(30px);
   transition: opacity 0.65s ease, transform 0.65s ease;
   transition-delay: 0.2s;
+}
+
+.sm-card-bases {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+  transition-delay: 0.25s;
+}
+
+.sm-card-herramientas {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+  transition-delay: 0.3s;
 }
 
 .sm-card-full {
@@ -38,7 +52,9 @@
 .sm-titulo.sm-visible,
 .sm-card-principal.sm-visible,
 .sm-card-izq.sm-visible,
-.sm-card-der.sm-visible,
+.sm-card-frameworks.sm-visible,
+.sm-card-bases.sm-visible,
+.sm-card-herramientas.sm-visible,
 .sm-card-full.sm-visible {
   opacity: 1;
   transform: none;
@@ -83,8 +99,14 @@
 .sm-card-izq.sm-visible .chincheta-izq,
 .sm-card-izq.sm-visible .chincheta-der       { animation-delay: 0.85s; }
 
-.sm-card-der.sm-visible .chincheta-izq,
-.sm-card-der.sm-visible .chincheta-der       { animation-delay: 0.85s; }
+.sm-card-frameworks.sm-visible .chincheta-izq,
+.sm-card-frameworks.sm-visible .chincheta-der { animation-delay: 0.85s; }
+
+.sm-card-bases.sm-visible .chincheta-izq,
+.sm-card-bases.sm-visible .chincheta-der      { animation-delay: 0.85s; }
+
+.sm-card-herramientas.sm-visible .chincheta-izq,
+.sm-card-herramientas.sm-visible .chincheta-der { animation-delay: 0.95s; }
 
 @keyframes clavarIzq {
   0%   { opacity: 0; transform: translateY(-55px) rotate(-12deg); }
