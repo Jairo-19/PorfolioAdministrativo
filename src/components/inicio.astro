@@ -9,9 +9,7 @@
       Hola, soy <span class="text-[#cc0247]">Jairo Jiménez Ramos</span>
     </h1>
     <p class="anim-slide-up text-lg text-gray-600 max-w-xl leading-relaxed" style="animation-delay: 0.3s">
-      Desarrollador web apasionado por crear experiencias digitales modernas,
-      limpias y funcionales. Aquí encontrarás mis proyectos, habilidades y
-      todo sobre mi trayectoria profesional.
+      <span id="typewriter-text"></span><span id="typewriter-cursor" class="inline-block w-0.5 h-5 bg-[#cc0247] ml-0.5 align-middle">&#8203;</span>
     </p>
     <div class="anim-slide-up flex gap-4 mt-2" style="animation-delay: 0.5s">
       <a href="#proyectos" class="bg-[#cc0247] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#a8013b] transition-colors duration-300">
@@ -31,4 +29,24 @@
   </div>
 
 </section>
+
+<script>
+  const texto = "Desarrollador web apasionado por crear experiencias digitales modernas, limpias y funcionales. Aquí encontrarás mis proyectos, habilidades y todo sobre mi trayectoria profesional.";
+  const target  = document.getElementById('typewriter-text')!;
+  const cursor  = document.getElementById('typewriter-cursor')!;
+  const delay   = 800;   // ms antes de empezar (tras la animación del título)
+  const speed   = 28;    // ms por carácter
+
+  let i = 0;
+  setTimeout(() => {
+    const interval = setInterval(() => {
+      target.textContent += texto[i];
+      i++;
+      if (i >= texto.length) {
+        clearInterval(interval);
+        setTimeout(() => cursor.classList.add('done'), 1200);
+      }
+    }, speed);
+  }, delay);
+</script>
 

@@ -43,3 +43,59 @@
   opacity: 1;
   transform: none;
 }
+
+/* ── Chinchetas ── */
+.chincheta {
+  position: absolute;
+  top: -13px;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  display: block;
+  width: 16px;
+  height: 24px;
+}
+
+.chincheta-izq {
+  left: 22px;
+  transform: translateY(-55px) rotate(-12deg);
+}
+
+.chincheta-der {
+  right: 22px;
+  transform: translateY(-55px) rotate(12deg);
+}
+
+.sm-visible .chincheta-izq {
+  animation: clavarIzq 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) forwards;
+}
+
+.sm-visible .chincheta-der {
+  animation: clavarDer 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) forwards;
+}
+
+.sm-card-principal.sm-visible .chincheta-izq,
+.sm-card-principal.sm-visible .chincheta-der { animation-delay: 0.75s; }
+
+.sm-card-full.sm-visible .chincheta-izq,
+.sm-card-full.sm-visible .chincheta-der      { animation-delay: 0.95s; }
+
+.sm-card-izq.sm-visible .chincheta-izq,
+.sm-card-izq.sm-visible .chincheta-der       { animation-delay: 0.85s; }
+
+.sm-card-der.sm-visible .chincheta-izq,
+.sm-card-der.sm-visible .chincheta-der       { animation-delay: 0.85s; }
+
+@keyframes clavarIzq {
+  0%   { opacity: 0; transform: translateY(-55px) rotate(-12deg); }
+  60%  { opacity: 1; transform: translateY(6px)   rotate(-12deg); }
+  80%  { transform: translateY(-4px) rotate(-12deg); }
+  100% { opacity: 1; transform: translateY(0)     rotate(-12deg); }
+}
+
+@keyframes clavarDer {
+  0%   { opacity: 0; transform: translateY(-55px) rotate(12deg); }
+  60%  { opacity: 1; transform: translateY(6px)   rotate(12deg); }
+  80%  { transform: translateY(-4px) rotate(12deg); }
+  100% { opacity: 1; transform: translateY(0)     rotate(12deg); }
+}
