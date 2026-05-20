@@ -55,7 +55,7 @@ const iconosBase: Record<string, string> = {
         href={proyecto.github}
         target="_blank"
         rel="noopener noreferrer"
-        class={`scroll-hidden scroll-delay-${i + 1} group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col`}
+        class={`scroll-hidden scroll-delay-${i + 1} tilt-card group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col`}
       >
         <!-- Imagen del proyecto -->
         <div class="bg-gray-50 border-b border-gray-100 overflow-hidden">
@@ -108,12 +108,21 @@ const iconosBase: Record<string, string> = {
 </section>
 
 <script>
-  const observer = new IntersectionObserver(
+  // ── Scroll reveal ──
+  const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('scroll-visible');
-          observer.unobserve(entry.target);
+          revealObserver.unobserve(entry.target);
+
+          // Liberar el transform del tilt una vez termine la transición de entrada
+          if (entry.target.classList.contains('tilt-card')) {
+            entry.target.addEventListener('transitionend', () => {
+              entry.target.style.opacity = '1';
+              entry.target.classList.remove('scroll-hidden', 'scroll-visible');
+            }, { once: true });
+          }
         }
       });
     },
@@ -121,6 +130,28 @@ const iconosBase: Record<string, string> = {
   );
 
   document.querySelectorAll('#proyectos .scroll-hidden').forEach((el) => {
-    observer.observe(el);
+    revealObserver.observe(el);
+  });
+
+  // ── Tilt 3D ──
+  const MAX_TILT = 8;
+
+  document.querySelectorAll('.tilt-card').forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const rotX = ((y - rect.height / 2) / (rect.height / 2)) * -MAX_TILT;
+      const rotY = ((x - rect.width  / 2) / (rect.width  / 2)) *  MAX_TILT;
+      (card as HTMLElement).style.transform =
+        `perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(10px)`;
+      (card as HTMLElement).style.boxShadow = '0 20px 40px rgba(0,0,0,0.14)';
+    });
+
+    card.addEventListener('mouseleave', () => {
+      (card as HTMLElement).style.transform =
+        'perspective(900px) rotateX(0deg) rotateY(0deg) translateZ(0)';
+      (card as HTMLElement).style.boxShadow = '';
+    });
   });
 </script>

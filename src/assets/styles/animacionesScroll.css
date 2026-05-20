@@ -29,3 +29,10 @@
 .scroll-delay-3 { transition-delay: 0.3s; }
 .scroll-delay-4 { transition-delay: 0.4s; }
 .scroll-delay-5 { transition-delay: 0.5s; }
+
+/* ── Tilt 3D ── */
+.tilt-card {
+  transition: transform 0.18s ease, box-shadow 0.25s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
