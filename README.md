@@ -1,46 +1,88 @@
-# Astro Starter Kit: Basics
+# Portfolio - Jairo Jimenez Ramos
 
-```sh
-npm create astro@latest -- --template basics
+Portfolio profesional desarrollado con Astro, TypeScript y Tailwind CSS. Presenta mis proyectos, habilidades y experiencia como desarrollador web.
+
+## Caracteristicas
+
+- **Diseno moderno y responsivo** → Se adapta perfectamente a cualquier dispositivo
+- **Animaciones suaves** → Efectos de scroll, typewriter y chinchetas con Intersection Observer
+- **Efecto Tilt 3D** → Las tarjetas de proyectos se inclinan siguiendo el cursor
+- **TypeScript** → Codigo type-safe y mantenible
+- **Tailwind CSS** → Estilos optimizados y personalizacion facil
+- **Rendimiento** → Sitio estatico ultra rapido con Astro
+
+## Estructura del Proyecto
+
+```
+Portfolio/
+├── src/
+│   ├── assets/
+│   │   └── styles/              # Archivos CSS de animaciones
+│   │       ├── animacionesInicio.css
+│   │       ├── animacionesSobreMi.css
+│   │       ├── animacionesScroll.css
+│   │       └── global.css
+│   ├── components/              # Componentes Astro
+│   │   ├── header.astro
+│   │   ├── inicio.astro
+│   │   ├── sobreMi.astro
+│   │   ├── proyectos.astro
+│   │   └── contacto.astro
+│   ├── layouts/
+│   │   └── Layout.astro         # Layout principal
+│   └── pages/
+│       └── index.astro          # Pagina principal
+├── public/                       # Imagenes y assets estaticos
+├── package.json
+├── tsconfig.json
+├── astro.config.mjs
+└── tailwind.config.mjs
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Tecnologias
 
-## 🚀 Project Structure
+- **Astro** - Framework SSG moderno
+- **TypeScript** - Tipado estatico
+- **Tailwind CSS** - Utilidades CSS
+- **Vite** - Bundler rapido
+- **Intersection Observer API** - Animaciones con scroll
 
-Inside of your Astro project, you'll see the following folders and files:
+## Secciones
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+1. **Inicio** → Presentacion con efecto typewriter
+2. **Sobre mi** → Informacion personal, formacion, habilidades y experiencia
+3. **Proyectos** → Tarjetas interactivas con efecto Tilt 3D
+4. **Contacto** → Enlaces a redes sociales y datos de contacto
+
+## Comandos
+
+```bash
+# Instalar dependencias
+npm install
+
+# Ejecutar en desarrollo
+npm run dev
+
+# Construir para produccion
+npm run build
+
+# Vista previa de la build
+npm run preview
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Proyectos Destacados
 
-## 🧞 Commands
+- **SurpriseBurger** → App de hamburgueseria (Laravel, PHP, Tailwind)
+- **PuraSonrisa** → Web clinica dental con automatizacion n8n (Laravel, PHP, Tailwind)
+- **PelisMax** → Catalogo de peliculas con API (HTML, TypeScript, Vite, Express)
 
-All commands are run from the root of the project, from a terminal:
+## Contacto
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- **Email** → ramosj06jairo@gmail.com
+- **Telefono** → 722408527
+- **GitHub** → https://github.com/Jairo-19
+- **LinkedIn** → https://www.linkedin.com/in/jairo-jimenez-ramos-728463258/
 
-## 👀 Want to learn more?
+## Licencia
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+MIT
