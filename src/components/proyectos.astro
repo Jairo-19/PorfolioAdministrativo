@@ -113,14 +113,15 @@ const iconosBase: Record<string, string> = {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('scroll-visible');
-          revealObserver.unobserve(entry.target);
+          const el = entry.target as HTMLElement;
+          el.classList.add('scroll-visible');
+          revealObserver.unobserve(el);
 
           // Liberar el transform del tilt una vez termine la transición de entrada
-          if (entry.target.classList.contains('tilt-card')) {
-            entry.target.addEventListener('transitionend', () => {
-              entry.target.style.opacity = '1';
-              entry.target.classList.remove('scroll-hidden', 'scroll-visible');
+          if (el.classList.contains('tilt-card')) {
+            el.addEventListener('transitionend', () => {
+              el.style.opacity = '1';
+              el.classList.remove('scroll-hidden', 'scroll-visible');
             }, { once: true });
           }
         }
@@ -136,22 +137,22 @@ const iconosBase: Record<string, string> = {
   // ── Tilt 3D ──
   const MAX_TILT = 8;
 
-  document.querySelectorAll('.tilt-card').forEach((card) => {
+  document.querySelectorAll<HTMLElement>('.tilt-card').forEach((card) => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+      const x = (e as MouseEvent).clientX - rect.left;
+      const y = (e as MouseEvent).clientY - rect.top;
       const rotX = ((y - rect.height / 2) / (rect.height / 2)) * -MAX_TILT;
       const rotY = ((x - rect.width  / 2) / (rect.width  / 2)) *  MAX_TILT;
-      (card as HTMLElement).style.transform =
+      card.style.transform =
         `perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(10px)`;
-      (card as HTMLElement).style.boxShadow = '0 20px 40px rgba(0,0,0,0.14)';
+      card.style.boxShadow = '0 20px 40px rgba(0,0,0,0.14)';
     });
 
     card.addEventListener('mouseleave', () => {
-      (card as HTMLElement).style.transform =
+      card.style.transform =
         'perspective(900px) rotateX(0deg) rotateY(0deg) translateZ(0)';
-      (card as HTMLElement).style.boxShadow = '';
+      card.style.boxShadow = '';
     });
   });
 </script>
