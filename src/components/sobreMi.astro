@@ -1,0 +1,137 @@
+---
+const idiomas = [
+  { nombre: "Español",  nivel: "Nativo",       porcentaje: 100 },
+  { nombre: "Inglés",   nivel: "Intermedio",   porcentaje: 40  },
+];
+
+const infoPersonal = [
+  { etiqueta: "Ubicación",     valor: "Antequera, Málaga" },
+  { etiqueta: "Carné de conducir", valor: "En proceso"         },
+  { etiqueta: "Disponibilidad", valor: "Inmediata"        },
+];
+
+const estudios = [
+  { titulo: "Desarrollo de Aplicaciones Web (DAW)", centro: "ITEC",  anio: "2024 – 2026" },
+  { titulo: "Grado Medio Auxiliar Administrativo", centro: "IES · CFGM",  anio: "2022 – 2024" },
+  { titulo: "Educación Secundaria Obligatoria (ESO)", centro: "Nuestra Señora del Carmen",  anio: "2018 – 2022" },
+];
+
+const lenguajes = [
+  "HTML", "CSS", "JavaScript", "TypeScript",
+  "PHP", "Java", "Python",
+];
+
+const tecnologias = [
+  "Laravel", "React", "Astro", "Next.js", "Vite",
+  "Tailwind CSS", "Bootstrap", "MySQL", "PostgreSQL",
+  "Docker", "Vercel", "Git", "GitHub", "Linux", "WordPress"
+];
+---
+
+<section id="sobre-mi" class="py-24 px-8 md:px-20 bg-gray-50">
+
+  <!-- Título de sección -->
+  <h1 class="text-4xl font-bold text-gray-900 text-center mb-16" style="font-family: 'Playfair Display', serif">
+    Sobre <span class="text-[#cc0247]">mí</span>
+  </h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+    <!-- ── Quién soy (ancho completo, 3 columnas internas) ── -->
+    <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 md:col-span-2 border-t-4 border-t-[#cc0247]">
+      <h3 class="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
+        <span class="text-[#cc0247]">01.</span> ¿Quién soy?
+      </h3>
+
+      <!-- Párrafo completo -->
+      <p class="text-gray-600 leading-relaxed mb-8">
+        Soy desarrollador web con experiencia tanto en backend como en frontend,
+        aunque donde realmente disfruto es dando forma a interfaces. Me gusta que
+        lo que se ve en pantalla sea claro, rápido e intuitivo. Me fijo mucho en
+        los detalles de diseño y disfruto creando experiencias que resulten
+        cómodas y naturales para el usuario.
+      </p>
+
+      <!-- 2 columnas: info+estudios | idiomas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Información personal + Estudios -->
+        <div class="flex flex-col gap-6">
+          <div>
+            <h4 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-3 border-b-2 border-[#cc0247] pb-2">Información personal</h4>
+            <ul class="flex flex-col gap-2">
+              {infoPersonal.map(({ etiqueta, valor }) => (
+                <li class="flex justify-between text-sm">
+                  <span class="text-gray-400">{etiqueta}</span>
+                  <span class="text-gray-700 font-medium">{valor}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-3 border-b-2 border-[#cc0247] pb-2">Formación académica</h4>
+            <ul class="flex flex-col gap-3">
+              {estudios.map(({ titulo, centro, anio }) => (
+                <li>
+                  <p class="text-gray-700 font-medium text-sm">{titulo}</p>
+                  <p class="text-gray-400 text-xs">{centro} &middot; {anio}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Idiomas -->
+        <div>
+          <h4 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-3 border-b-2 border-[#cc0247] pb-2">Idiomas</h4>
+          <ul class="flex flex-col gap-5">
+            {idiomas.map(({ nombre, nivel, porcentaje }) => (
+              <li>
+                <div class="flex justify-between mb-1">
+                  <span class="text-gray-700 font-medium text-sm">{nombre}</span>
+                  <span class="text-xs text-gray-400">{nivel}</span>
+                </div>
+                <div class="w-full bg-gray-100 rounded-full h-2">
+                  <div
+                    class="bg-[#cc0247] h-2 rounded-full transition-all duration-700"
+                    style={`width: ${porcentaje}%`}
+                  />
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── Lenguajes ── -->
+    <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 border-t-4 border-t-[#cc0247]">
+      <h3 class="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
+        <span class="text-[#cc0247]">03.</span> Lenguajes
+      </h3>
+      <ul class="flex flex-wrap gap-3">
+        {lenguajes.map((lang) => (
+          <li class="bg-gray-50 border border-gray-200 text-gray-700 text-sm font-medium px-4 py-2 rounded-lg hover:border-[#cc0247] hover:text-[#cc0247] transition-colors duration-300">
+            {lang}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- ── Tecnologías ── -->
+    <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 border-t-4 border-t-[#cc0247]">
+      <h3 class="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
+        <span class="text-[#cc0247]">04.</span> Tecnologías y herramientas
+      </h3>
+      <ul class="flex flex-wrap gap-3">
+        {tecnologias.map((tech) => (
+          <li class="bg-gray-50 border border-gray-200 text-gray-700 text-sm font-medium px-4 py-2 rounded-lg hover:border-[#cc0247] hover:text-[#cc0247] transition-colors duration-300">
+            {tech}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+  </div>
+</section>
