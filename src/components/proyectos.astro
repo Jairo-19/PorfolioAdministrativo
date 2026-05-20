@@ -1,0 +1,108 @@
+---
+const proyectos = [
+  {
+    nombre: "SurpriseBurger",
+    imagen: "/SurpriseBurger.png",
+    descripcion: "Proyecto final de curso que implementa una aplicación web completa para una hamburguesería. Incluye catálogo de productos, carrito de compras, gestión de pedidos y panel administrativo con control de inventario.",
+    tecnologias: ["Laravel", "PHP", "JavaScript", "HTML", "Tailwind CSS"],
+    github: "https://github.com/Jairo-19/surpriseburger",
+  },
+  {
+    nombre: "PuraSonrisa",
+    imagen: "/PuraSonrisa.png",
+    descripcion: "Sitio web para clínica dental diseñado para reforzar habilidades en nuevas tecnologías. Integra n8n para automatización de flujos de trabajo y Mailtrap para gestión y testing de notificaciones por email.",
+    tecnologias: ["Laravel", "PHP", "JavaScript", "HTML", "Tailwind CSS", "n8n"],
+    github: "https://github.com/Jairo-19/PuraSonrisa",
+  },
+  {
+    nombre: "PelisMax",
+    imagen: "/PelisMax.png",
+    descripcion: "Plataforma de películas desarrollada para dominar tecnologías modernas. Consume una API externa, implementa búsqueda avanzada, filtros dinámicos y detalle de cada película con arquitectura escalable.",
+    tecnologias: ["HTML", "Tailwind CSS", "TypeScript", "Vite", "Express"],
+    github: "https://github.com/Jairo-19/PelisMax",
+  },
+];
+
+const iconosBase: Record<string, string> = {
+  "React":        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  "JavaScript":   "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  "TypeScript":   "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+  "HTML":         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+  "CSS":          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+  "Tailwind CSS": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+  "PHP":          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+  "Laravel":      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
+  "MySQL":        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+  "Python":       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  "Next.js":      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+  "Sass":         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg",
+  "Vite":         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg",
+  "Express":      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
+};
+---
+
+<section id="proyectos" class="py-24 px-8 md:px-20 bg-white">
+
+  <!-- Título de sección -->
+  <h2 class="text-4xl font-bold text-gray-900 text-center mb-16" style="font-family: 'Playfair Display', serif">
+    Mis <span class="text-[#cc0247]">proyectos</span>
+  </h2>
+
+  <!-- Grid de tarjetas -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    {proyectos.map((proyecto) => (
+      <a
+        href={proyecto.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col"
+      >
+        <!-- Imagen del proyecto -->
+        <div class="bg-gray-50 border-b border-gray-100 overflow-hidden">
+          <img
+            src={proyecto.imagen}
+            alt={`Captura de ${proyecto.nombre}`}
+            class="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Contenido -->
+        <div class="p-6 flex flex-col flex-1 gap-3">
+          <!-- Título -->
+          <h3 class="text-lg font-bold text-gray-900 group-hover:text-[#cc0247] transition-colors duration-200">
+            {proyecto.nombre}
+          </h3>
+
+          <!-- Descripción -->
+          <p class="text-sm text-gray-600 leading-relaxed flex-1">
+            {proyecto.descripcion}
+          </p>
+
+          <!-- Tecnologías -->
+          <div class="flex items-center gap-2 flex-wrap pt-2 border-t border-gray-100 mt-auto">
+            {proyecto.tecnologias.map((tech) =>
+              iconosBase[tech] ? (
+                <img
+                  src={iconosBase[tech]}
+                  alt={tech}
+                  title={tech}
+                  class="w-6 h-6"
+                />
+              ) : (
+                <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
+                  {tech}
+                </span>
+              )
+            )}
+            <!-- Enlace a GitHub -->
+            <span class="ml-auto text-xs text-[#cc0247] font-medium group-hover:underline">
+              Ver en GitHub →
+            </span>
+          </div>
+        </div>
+      </a>
+    ))}
+  </div>
+
+</section>

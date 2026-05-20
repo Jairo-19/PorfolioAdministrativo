@@ -5,9 +5,10 @@ const idiomas = [
 ];
 
 const infoPersonal = [
-  { etiqueta: "Ubicación",     valor: "Antequera, Málaga" },
-  { etiqueta: "Carné de conducir", valor: "En proceso"         },
-  { etiqueta: "Disponibilidad", valor: "Inmediata"        },
+  { etiqueta: "Fecha de nacimiento", valor: "19/10/2006"        },
+  { etiqueta: "Ubicación",          valor: "Antequera, Málaga" },
+  { etiqueta: "Carné de conducir",  valor: "En proceso"        },
+  { etiqueta: "Disponibilidad",     valor: "Inmediata"         },
 ];
 
 const estudios = [
@@ -24,21 +25,37 @@ const lenguajes = [
 const tecnologias = [
   "Laravel", "React", "Astro", "Next.js", "Vite",
   "Tailwind CSS", "Bootstrap", "MySQL", "PostgreSQL",
-  "Docker", "Vercel", "Git", "GitHub", "Linux", "WordPress"
+  "Docker", "Vercel", "Git", "GitHub", "Linux", "WordPress",
+  "API REST", "Arquitectura Hexagonal", "Postman", "n8n",
+  "Figma", "Herramientas de IA",
+];
+
+const habilidades = [
+  "Puntual", "Trabajo en equipo", "Resolución de problemas",
+  "Aprendizaje continuo", "Ordenado", "Curioso", "Creativo",
+];
+
+const experiencia = [
+  {
+    empresa: "IC Editorias",
+    puesto: "Prácticas – Desarrollo Web",
+    anio: "3 meses",
+    descripcion: "Durante mis prácticas desarrollé un frontend de búsqueda de libros con React, creé un programa de mensajería mediante RabbitMQ para comunicación asincrónica entre servicios, e implementé una API backend con Python. Aprendí arquitectura hexagonal."
+  },
 ];
 ---
 
 <section id="sobre-mi" class="py-24 px-8 md:px-20 bg-gray-50">
 
   <!-- Título de sección -->
-  <h1 class="text-4xl font-bold text-gray-900 text-center mb-16" style="font-family: 'Playfair Display', serif">
+  <h1 class="sm-titulo text-4xl font-bold text-gray-900 text-center mb-16" style="font-family: 'Playfair Display', serif">
     Sobre <span class="text-[#cc0247]">mí</span>
   </h1>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
 
     <!-- ── Quién soy (ancho completo, 3 columnas internas) ── -->
-    <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 md:col-span-2 border-t-4 border-t-[#cc0247]">
+    <div class="sm-card-principal bg-white rounded-2xl p-8 shadow-sm border border-gray-100 md:col-span-2 border-t-4 border-t-[#cc0247]">
       <h3 class="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
         <span class="text-[#cc0247]">01.</span> ¿Quién soy?
       </h3>
@@ -81,32 +98,66 @@ const tecnologias = [
           </div>
         </div>
 
-        <!-- Idiomas -->
-        <div>
-          <h4 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-3 border-b-2 border-[#cc0247] pb-2">Idiomas</h4>
-          <ul class="flex flex-col gap-5">
-            {idiomas.map(({ nombre, nivel, porcentaje }) => (
-              <li>
-                <div class="flex justify-between mb-1">
-                  <span class="text-gray-700 font-medium text-sm">{nombre}</span>
-                  <span class="text-xs text-gray-400">{nivel}</span>
-                </div>
-                <div class="w-full bg-gray-100 rounded-full h-2">
-                  <div
-                    class="bg-[#cc0247] h-2 rounded-full transition-all duration-700"
-                    style={`width: ${porcentaje}%`}
-                  />
-                </div>
-              </li>
-            ))}
-          </ul>
+        <!-- Habilidades + Idiomas -->
+        <div class="flex flex-col gap-6">
+          <div>
+            <h4 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-3 border-b-2 border-[#cc0247] pb-2">Habilidades</h4>
+            <ul class="flex flex-wrap gap-2">
+              {habilidades.map((h) => (
+                <li class="bg-gray-50 border border-gray-200 text-gray-700 text-xs font-medium px-3 py-1.5 rounded-lg">
+                  {h}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-3 border-b-2 border-[#cc0247] pb-2">Idiomas</h4>
+            <ul class="flex flex-col gap-5">
+              {idiomas.map(({ nombre, nivel, porcentaje }) => (
+                <li>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-gray-700 font-medium text-sm">{nombre}</span>
+                    <span class="text-xs text-gray-400">{nivel}</span>
+                  </div>
+                  <div class="w-full bg-gray-100 rounded-full h-2">
+                    <div
+                      class="bg-[#cc0247] h-2 rounded-full transition-all duration-700"
+                      style={`width: ${porcentaje}%`}
+                    />
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
       </div>
     </div>
 
+    <!-- ── Experiencia ── -->
+    <div class="sm-card-full bg-white rounded-2xl p-8 shadow-sm border border-gray-100 md:col-span-2 border-t-4 border-t-[#cc0247]">
+      <h3 class="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
+        <span class="text-[#cc0247]">02.</span> Experiencia
+      </h3>
+      <ul class="flex flex-col gap-6">
+        {experiencia.map(({ empresa, puesto, anio, descripcion }) => (
+          <li class="flex gap-4">
+            <div class="mt-1 w-2 h-2 rounded-full bg-[#cc0247] shrink-0"></div>
+            <div>
+              <div class="flex items-center gap-3 flex-wrap">
+                <p class="text-gray-900 font-semibold text-sm">{empresa}</p>
+                <span class="text-xs text-white bg-[#cc0247] px-2 py-0.5 rounded-full">{anio}</span>
+              </div>
+              <p class="text-xs text-gray-400 mb-1">{puesto}</p>
+              <p class="text-gray-600 text-sm leading-relaxed">{descripcion}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+
     <!-- ── Lenguajes ── -->
-    <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 border-t-4 border-t-[#cc0247]">
+    <div class="sm-card-izq bg-white rounded-2xl p-8 shadow-sm border border-gray-100 border-t-4 border-t-[#cc0247]">
       <h3 class="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
         <span class="text-[#cc0247]">03.</span> Lenguajes
       </h3>
@@ -120,7 +171,7 @@ const tecnologias = [
     </div>
 
     <!-- ── Tecnologías ── -->
-    <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 border-t-4 border-t-[#cc0247]">
+    <div class="sm-card-der bg-white rounded-2xl p-8 shadow-sm border border-gray-100 border-t-4 border-t-[#cc0247]">
       <h3 class="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
         <span class="text-[#cc0247]">04.</span> Tecnologías y herramientas
       </h3>
