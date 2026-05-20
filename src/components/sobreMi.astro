@@ -202,3 +202,29 @@ const experiencia = [
 
   </div>
 </section>
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('sm-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  const selectores = [
+    '.sm-titulo',
+    '.sm-card-principal',
+    '.sm-card-full',
+    '.sm-card-izq',
+    '.sm-card-der',
+  ];
+
+  selectores.forEach((sel) => {
+    const el = document.querySelector(sel);
+    if (el) observer.observe(el);
+  });
+</script>
