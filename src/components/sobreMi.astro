@@ -21,44 +21,7 @@ const estudios = [
 
 const cursos = [
   { titulo: "Ciberseguridad en el teletrabajo", plataforma: "Google" },
-  { titulo: "Desarrollo con IA", plataforma: "BigSchool" },
-];
-
-const lenguajes = [
-  { nombre: "HTML",       destacado: true  },
-  { nombre: "CSS",        destacado: true  },
-  { nombre: "JavaScript", destacado: true  },
-  { nombre: "TypeScript", destacado: false },
-  { nombre: "PHP",        destacado: true  },
-  { nombre: "Java",       destacado: false },
-];
-
-const frameworks = [
-  { nombre: "Laravel",      destacado: true },
-  { nombre: "React",        destacado: false },
-  { nombre: "Astro",        destacado: false },
-  { nombre: "Next.js",      destacado: false },
-  { nombre: "Vite",         destacado: false },
-  { nombre: "Tailwind CSS", destacado: true  },
-  { nombre: "Bootstrap",    destacado: false },
-];
-
-const basesdedatos = [
-  { nombre: "MySQL",      destacado: true  },
-  { nombre: "PostgreSQL", destacado: false },
-];
-
-const herramientas = [
-  { nombre: "Docker",                 destacado: false },
-  { nombre: "Vercel",                 destacado: false },
-  { nombre: "Git",                    destacado: true  },
-  { nombre: "GitHub",                 destacado: true  },
-  { nombre: "Linux",                  destacado: false },
-  { nombre: "WordPress",              destacado: false },
-  { nombre: "API REST",               destacado: false },
-  { nombre: "Arquitectura Hexagonal", destacado: false },
-  { nombre: "Postman",                destacado: false },
-  { nombre: "n8n",                    destacado: false },
+  { titulo: "Mecanografía", plataforma: "Ratatype" },
 ];
 
 const habilidades = [
@@ -68,10 +31,10 @@ const habilidades = [
 
 const experiencia = [
   {
-    empresa: "IC Editorial",
-    puesto: "Prácticas – Desarrollo Web",
-    anio: "3 meses",
-    descripcion: "Durante mis prácticas desarrollé un frontend de búsqueda de libros con React, creé un programa de mensajería mediante RabbitMQ para comunicación asincrónica entre servicios, e implementé una API backend con Python. Aprendí arquitectura hexagonal."
+    empresa: "Gestoría Soriano",
+    puesto: "Prácticas",
+    anio: "2024",
+    descripcion: "Realicé tareas de gestión administrativa especializada, incluyendo organización y clasificación de informes, manejo de bases de datos de clientes y tramitación de documentación administrativa. Adquirí experiencia en organización de expedientes y gestión de trámites legales."
   },
 ];
 ---
@@ -87,18 +50,14 @@ const experiencia = [
 
     <!-- ── Quién soy (ancho completo, 3 columnas internas) ── -->
     <div class="sm-card-principal relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100 md:col-span-2 border-t-4 border-t-[#9E5842]">
-      <span class="chincheta chincheta-der" aria-hidden="true"><svg width="16" height="24" viewBox="0 0 16 24" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" fill="#d94f82"/><circle cx="8" cy="7" r="6" fill="#ff78a6"/><circle cx="5.5" cy="4.5" r="2.5" fill="#ffb3cc" opacity="0.5"/><rect x="7" y="14" width="2" height="10" rx="1" fill="#aaa"/></svg></span>
+      <span class="chincheta chincheta-der" aria-hidden="true"><svg width="16" height="24" viewBox="0 0 16 24" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" fill="#6B3E2E"/><circle cx="8" cy="7" r="6" fill="#A0613F"/><circle cx="5.5" cy="4.5" r="2.5" fill="#D4A574" opacity="0.5"/><rect x="7" y="14" width="2" height="10" rx="1" fill="#4a4a4a"/></svg></span>
       <h3 class="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
         <span class="text-[#9E5842]">01.</span> ¿Quién soy?
       </h3>
 
       <!-- Párrafo completo -->
       <p class="text-gray-600 leading-relaxed mb-8">
-        Soy desarrollador web con experiencia tanto en backend como en frontend,
-        aunque donde realmente disfruto es dando forma a interfaces. Me gusta que
-        lo que se ve en pantalla sea claro, rápido e intuitivo. Me fijo mucho en
-        los detalles de diseño y disfruto creando experiencias que resulten
-        cómodas y naturales para el usuario.
+        Profesional orientado al área administrativa, con experiencia en gestión de documentación, atención telefónica y soporte en tareas organizativas y administrativas. Capacidad para trabajar de forma organizada, gestionar múltiples tareas y adaptarse a entornos dinámicos utilizando herramientas ofimáticas y sistemas de gestión.
       </p>
 
       <!-- 2 columnas: info+estudios | idiomas -->
@@ -177,7 +136,7 @@ const experiencia = [
 
     <!-- ── Experiencia ── -->
     <div class="sm-card-full relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100 md:col-span-2 border-t-4 border-t-[#9E5842]">
-      <span class="chincheta chincheta-der" aria-hidden="true"><svg width="16" height="24" viewBox="0 0 16 24" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" fill="#d94f82"/><circle cx="8" cy="7" r="6" fill="#ff78a6"/><circle cx="5.5" cy="4.5" r="2.5" fill="#ffb3cc" opacity="0.5"/><rect x="7" y="14" width="2" height="10" rx="1" fill="#aaa"/></svg></span>
+      <span class="chincheta chincheta-der" aria-hidden="true"><svg width="16" height="24" viewBox="0 0 16 24" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" fill="#6B3E2E"/><circle cx="8" cy="7" r="6" fill="#A0613F"/><circle cx="5.5" cy="4.5" r="2.5" fill="#D4A574" opacity="0.5"/><rect x="7" y="14" width="2" height="10" rx="1" fill="#4a4a4a"/></svg></span>
       <h3 class="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
         <span class="text-[#9E5842]">02.</span> Experiencia
       </h3>
@@ -198,94 +157,6 @@ const experiencia = [
       </ul>
     </div>
 
-    <!-- ── Lenguajes ── -->
-    <div class="sm-card-izq relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100 border-t-4 border-t-[#9E5842]">
-      <span class="chincheta chincheta-der" aria-hidden="true"><svg width="16" height="24" viewBox="0 0 16 24" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" fill="#d94f82"/><circle cx="8" cy="7" r="6" fill="#ff78a6"/><circle cx="5.5" cy="4.5" r="2.5" fill="#ffb3cc" opacity="0.5"/><rect x="7" y="14" width="2" height="10" rx="1" fill="#aaa"/></svg></span>
-      <h3 class="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
-        <span class="text-[#9E5842]">03.</span> Lenguajes
-      </h3>
-      <ul class="flex flex-wrap gap-3">
-        {lenguajes.map(({ nombre, destacado }) => (
-          <li class={`text-sm font-medium px-4 py-2 rounded-lg transition-colors duration-300 border ${
-            destacado
-              ? 'bg-[#fff0f4] border-[#9E5842] text-[#9E5842]'
-              : 'bg-gray-50 border-gray-200 text-gray-700 hover:border-[#9E5842] hover:text-[#9E5842]'
-          }`}>
-            {nombre}
-          </li>
-        ))}
-      </ul>
-    </div>
-
-    <!-- ── Frameworks ── -->
-    <div class="sm-card-frameworks relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100 border-t-4 border-t-[#9E5842]">
-      <span class="chincheta chincheta-der" aria-hidden="true"><svg width="16" height="24" viewBox="0 0 16 24" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" fill="#d94f82"/><circle cx="8" cy="7" r="6" fill="#ff78a6"/><circle cx="5.5" cy="4.5" r="2.5" fill="#ffb3cc" opacity="0.5"/><rect x="7" y="14" width="2" height="10" rx="1" fill="#aaa"/></svg></span>
-      <h3 class="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
-        <span class="text-[#9E5842]">04.</span> Frameworks
-      </h3>
-      <ul class="flex flex-wrap gap-3">
-        {frameworks.map(({ nombre, destacado }) => (
-          <li class={`text-sm font-medium px-4 py-2 rounded-lg transition-colors duration-300 border ${
-            destacado
-              ? 'bg-[#fff0f4] border-[#9E5842] text-[#9E5842]'
-              : 'bg-gray-50 border-gray-200 text-gray-700 hover:border-[#9E5842] hover:text-[#9E5842]'
-          }`}>
-            {nombre}
-          </li>
-        ))}
-      </ul>
-    </div>
-
-    <!-- ── Bases de datos ── -->
-    <div class="sm-card-bases relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100 border-t-4 border-t-[#9E5842]">
-      <span class="chincheta chincheta-der" aria-hidden="true"><svg width="16" height="24" viewBox="0 0 16 24" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" fill="#d94f82"/><circle cx="8" cy="7" r="6" fill="#ff78a6"/><circle cx="5.5" cy="4.5" r="2.5" fill="#ffb3cc" opacity="0.5"/><rect x="7" y="14" width="2" height="10" rx="1" fill="#aaa"/></svg></span>
-      <h3 class="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
-        <span class="text-[#9E5842]">05.</span> Bases de datos
-      </h3>
-      <ul class="flex flex-wrap gap-3">
-        {basesdedatos.map(({ nombre, destacado }) => (
-          <li class={`text-sm font-medium px-4 py-2 rounded-lg transition-colors duration-300 border ${
-            destacado
-              ? 'bg-[#fff0f4] border-[#9E5842] text-[#9E5842]'
-              : 'bg-gray-50 border-gray-200 text-gray-700 hover:border-[#9E5842] hover:text-[#9E5842]'
-          }`}>
-            {nombre}
-          </li>
-        ))}
-      </ul>
-    </div>
-
-    <!-- ── Herramientas ── -->
-    <div class="sm-card-herramientas relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100 border-t-4 border-t-[#9E5842]">
-      <span class="chincheta chincheta-der" aria-hidden="true"><svg width="16" height="24" viewBox="0 0 16 24" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" fill="#d94f82"/><circle cx="8" cy="7" r="6" fill="#ff78a6"/><circle cx="5.5" cy="4.5" r="2.5" fill="#ffb3cc" opacity="0.5"/><rect x="7" y="14" width="2" height="10" rx="1" fill="#aaa"/></svg></span>
-      <h3 class="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
-        <span class="text-[#9E5842]">06.</span> Herramientas
-      </h3>
-      <ul class="flex flex-wrap gap-3">
-        {herramientas.map(({ nombre, destacado }) => (
-          <li class={`text-sm font-medium px-4 py-2 rounded-lg transition-colors duration-300 border ${
-            destacado
-              ? 'bg-[#fff0f4] border-[#9E5842] text-[#9E5842]'
-              : 'bg-gray-50 border-gray-200 text-gray-700 hover:border-[#9E5842] hover:text-[#9E5842]'
-          }`}>
-            {nombre}
-          </li>
-        ))}
-      </ul>
-    </div>
-
-  </div>
-
-  <!-- ── Leyenda ── -->
-  <div class="flex items-center gap-6 mt-10 max-w-5xl mx-auto pl-8">
-    <span class="flex items-center gap-2 text-sm text-gray-400">
-      <span class="inline-block w-4 h-4 rounded bg-[#fff0f4] border border-[#9E5842]"></span>
-      Mayor dominio
-    </span>
-    <span class="flex items-center gap-2 text-sm text-gray-400">
-      <span class="inline-block w-4 h-4 rounded bg-gray-50 border border-gray-200"></span>
-      Conocimiento funcional
-    </span>
   </div>
 
 </section>
@@ -306,10 +177,6 @@ const experiencia = [
     '.sm-titulo',
     '.sm-card-principal',
     '.sm-card-full',
-    '.sm-card-izq',
-    '.sm-card-frameworks',
-    '.sm-card-bases',
-    '.sm-card-herramientas',
   ];
 
   selectores.forEach((sel) => {
