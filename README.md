@@ -1,15 +1,15 @@
 # Portfolio - Jairo Jimenez Ramos
 
-Portfolio profesional desarrollado con Astro, TypeScript y Tailwind CSS. Presenta mis proyectos, habilidades y experiencia como desarrollador web.
+Portfolio profesional administrativo desarrollado con Astro, TypeScript y Tailwind CSS. Presenta mi formación, habilidades y experiencia en gestión administrativa.
 
 ## Caracteristicas
 
 - **Diseno moderno y responsivo** → Se adapta perfectamente a cualquier dispositivo
 - **Animaciones suaves** → Efectos de scroll, typewriter y chinchetas con Intersection Observer
-- **Efecto Tilt 3D** → Las tarjetas de proyectos se inclinan siguiendo el cursor
 - **TypeScript** → Codigo type-safe y mantenible
 - **Tailwind CSS** → Estilos optimizados y personalizacion facil
 - **Rendimiento** → Sitio estatico ultra rapido con Astro
+- **Diseño personalizado** → Colores y estilos enfocados a administrativo
 
 ## Estructura del Proyecto
 
@@ -26,7 +26,6 @@ Portfolio/
 │   │   ├── header.astro
 │   │   ├── inicio.astro
 │   │   ├── sobreMi.astro
-│   │   ├── proyectos.astro
 │   │   └── contacto.astro
 │   ├── layouts/
 │   │   └── Layout.astro         # Layout principal
@@ -49,10 +48,9 @@ Portfolio/
 
 ## Secciones
 
-1. **Inicio** → Presentacion con efecto typewriter
-2. **Sobre mi** → Informacion personal, formacion, habilidades y experiencia
-3. **Proyectos** → Tarjetas interactivas con efecto Tilt 3D
-4. **Contacto** → Enlaces a redes sociales y datos de contacto
+1. **Inicio** → Presentación con efecto typewriter
+2. **Sobre mí** → Información personal, formación, habilidades y experiencia
+3. **Contacto** → Enlaces a redes sociales y datos de contacto
 
 ## Comandos
 
@@ -70,11 +68,11 @@ npm run build
 npm run preview
 ```
 
-## Proyectos Destacados
+## Experiencia
 
-- **SurpriseBurger** → App de hamburgueseria (Laravel, PHP, Tailwind)
-- **PuraSonrisa** → Web clinica dental con automatizacion n8n (Laravel, PHP, Tailwind)
-- **PelisMax** → Catalogo de peliculas con API (HTML, TypeScript, Vite, Express)
+- **IC Editorial** → Prácticas en Desarrollo Web
+- **Gestión administrativa** → Organización y optimización de procesos
+- **Soporte administrativo** → Coordinación de tareas y seguimiento de proyectos
 
 ## Contacto
 
